@@ -1,0 +1,21 @@
+int leap_year(int yea)
+{
+	if ((yea % 4 == 0 && yea % 100 != 0) || (yea % 400 == 0))
+		return 1;
+	else
+		return 0;
+}
+
+int main()
+{
+	int year = 0;
+	for (year = 1000; year <= 2000; year++)
+	{
+
+		if(1==leap_year(year))
+		{
+			printf("%d ", year);
+		}
+	}
+	return 0;
+}
