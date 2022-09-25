@@ -1,0 +1,25 @@
+int Fib(n)
+{
+	if (n <= 2)
+		{
+    return 1;
+    }
+	else
+		{
+    return Fib(n - 1) + Fib(n - 2);
+    }
+}
+
+int main()
+{
+	int n = 0;
+	int i = 0;
+	int ret = 0;
+	scanf("%d", &n);
+	for (i=1;i<=n;i++)
+	{
+		ret = Fib(i);
+		printf("%d ",ret );
+	}
+	return 0;
+}
