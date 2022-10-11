@@ -1,0 +1,45 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+void all(int n, float rate,float money)
+{
+	for (int i=1;i<=n;i++)
+	{
+		float total = (1 + rate) * money;
+		money = total;
+    }
+	printf("%f",money);
+}
+
+int main()
+{
+	int n;
+	float rate,money;
+	scanf("%d%f",&n ,&money );
+	if (n == 1)
+	{
+		rate = 0.0225;
+		all(n,rate,money);
+	}
+	if (n == 2)
+	{
+		rate = 0.0243;
+		all(n, rate, money);
+	}
+	if (n == 3)
+	{
+		rate = 0.0270;
+		all(n, rate, money);
+	}
+	if (n == 5)
+	{
+		rate = 0.0288;
+		all(n, rate, money);
+	}
+	if (n == 8)
+	{
+		rate = 0.0300;
+		all(n, rate, money);
+	}
+	return 0;
+}
