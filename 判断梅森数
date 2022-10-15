@@ -1,0 +1,31 @@
+int main()
+{
+	int n_,n,i;
+	int count = 0;
+	scanf("%d", &n);
+	for ( n_=2;n_<=n;n_++)
+	{
+		int ret = 1;
+		for (int k = 1; k <= n_; k++)
+		{
+			ret = ret * 2;
+		}//计算2^n
+		for (i = 2; i < ret - 1; i++)
+		{
+			if ((ret - 1) % i == 0)
+			{
+				break;
+			}
+		}//判断素数
+		if (ret - 1 == i)
+		{
+			printf("%d\n", i);
+			count++;
+		}
+	}
+	if (count == 0)
+	{
+		printf("None");
+	}
+	return 0;
+}
