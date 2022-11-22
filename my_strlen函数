@@ -1,0 +1,73 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	char a[30];
+	gets(a);
+	int len = strlen(a);
+	printf("%d",len);
+	return 0;
+}
+
+int my_strlen(char* str)
+{
+	int count = 0;
+	while (*str != '\0')
+	{
+		count++;
+		str++;
+	}
+	return count;
+}
+
+int main()
+{
+	char arr[30];
+	gets(arr);
+	int len =my_strlen(arr);
+	printf("%d",len );
+	return 0;
+}计数器方法
+
+my_strlen(char* str)
+{
+	if (*str != '\0')
+	{
+		return 1 + my_strlen(str+1);
+	}
+	else
+		return 0;
+}
+
+int main()
+{
+	char arr[30];
+	gets(arr);
+	int len=my_strlen(arr);
+	printf("%d\n",len);
+	return 0;
+}递归方法
+
+int my_strlen(char* str)
+{
+	char* start = str;
+	char* end = str;
+	while (*end != '\0')
+	{
+		end++;
+	}
+	return end - start;
+}
+
+int main()
+{
+	char arr[30];
+	gets(arr);
+	int len=my_strlen(arr);
+	printf("%d",len);
+	return 0;
+}
+指针减去指针的值就是相差元素的个数
+
