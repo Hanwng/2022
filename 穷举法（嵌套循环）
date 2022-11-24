@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+int main()
+{
+	float brick = 100.0;
+	int man;
+	int woman;
+	float kid;
+	for (man=0;man<=100;man++)
+	{
+		for (woman = 0; woman <= 100; woman++)
+		{
+			for (kid = 0.0; kid <= 100.0; kid++)
+			{
+				if ((kid / 3.0 + woman * 3 + man * 4) == brick)
+				{
+					printf("man=%d woman=%d kid=%f\n", man, woman, kid);
+				}
+				else
+					;
+			}
+		}
+	}
+	return 0;
+}
