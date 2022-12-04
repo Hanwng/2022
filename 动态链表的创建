@@ -1,0 +1,32 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node  //定义链表结构体类型
+{
+	int data;
+	struct node* next;
+};
+typedef struct node  NODE;//重命名
+
+NODE* dynamic()//创建动态链表函数
+{
+	NODE * head, * p, * q;//头指针head，末结点p,新结点q
+	int t;//用于暂存输入的成绩
+	head = malloc(sizeof(NODE));//创建头结点
+	p = head;//p指向当前末结点
+	while (1)
+	{
+		q = malloc(sizeof(NODE));//q指向新结点
+		scanf("请输入成绩：%d",&t);
+		if (t < 0)
+		{
+			break;
+		}
+		q->data = t;//将成绩存到新结点中
+		p->next = q;//让新结点连接到链表中
+		p = q;//p指向新的末结点
+	}
+	p->next = NULL;//设置链表结束标志
+	return head;//返回头指针
+}
