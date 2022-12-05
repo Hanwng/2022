@@ -1,0 +1,51 @@
+struct node
+{
+	int data;
+	struct node* next;
+};
+typedef struct node NODE;
+
+NODE* create()
+{
+	NODE* head, * p, * q;
+	int t;
+	head = malloc(sizeof(NODE));
+	p = head;
+	while (1)
+	{
+		q = malloc(sizeof(NODE));
+		scanf("%d", &t);
+		if (t < 0)
+		{
+			break;
+		}
+		q->data = t;
+		p->next = q;
+		p = q;
+	}
+	p->next = NULL;
+	return head;
+}
+void print(NODE* head)
+{	
+	if (head->next == NULL)
+	{
+		printf("空链表");
+	}
+	else
+	{
+		while (head->next != NULL)
+		{
+			NODE* p = head->next;
+			printf("%d\n", p->data);
+			head = head->next;
+		}
+	}
+}
+
+int main()
+{
+	NODE* h = create();
+	print(h);
+	return 0;
+}
