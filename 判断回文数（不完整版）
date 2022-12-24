@@ -1,0 +1,71 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int n;
+	int arr[1005]={10};
+	cin >> n;
+	int i = 1;
+	int count = 0;
+	while (1)
+	{
+		arr[i++] = n % 10;//只需要把%10后的数字存放在数组里面，/10不需要
+		n = n / 10;
+		if (n == 0)
+		{
+			break;
+		}
+	}
+	for (int j=1;j<i;j++)
+	{
+		printf("%d ", arr[j]);
+	}
+	printf("\n");
+	//以上代码是逐位输出数字
+	int m = 0;
+	int n_ = i;
+	while (m < n_)
+	{
+		if (arr[m] == arr[n_])
+		{
+			m++;
+			n_--;
+		}
+		else
+			break;
+	}
+	int i_ = i-1;
+	int arr_[1005] = { 0 };
+	for (int p=1;p<i;p++)
+	{
+		arr_[p] = arr[i_--];
+	}
+	//将原来的数字倒序
+	/*for (int p=1;p<i;p++)
+	{
+		printf("%d ", arr_[p]);
+	}*/
+	int sum = 0;
+	int ret_ = 0;
+	if (m < n_)//不是回文数,数组下标从1开始
+	{
+		for (int m = 1; m < i; m++)
+		{
+			int ret = 1;
+			for (int d=1;d<m;d++)
+			{
+				ret *= 10;
+			}
+			ret_ = arr_[m] * ret;
+			sum += ret_;
+		}
+	}
+	else//是回文数
+	{
+		;
+	}
+	printf("%d",sum);
+	return 0;
+}
