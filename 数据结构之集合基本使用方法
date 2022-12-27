@@ -1,0 +1,17 @@
+#include<set>//数据结构set的头文件
+#include<string>
+using namespace std;//一定不要忘
+
+int main()
+{
+	set<string> country;//{ }定义set
+	country.insert("china");//{"china"}插入元素China
+	country.insert("america");//{"China"，"American"}插入元素American
+	country.insert("france");
+	country.erase("france");//清空集合中某一个具体的元素
+	for (set<string>::iterator it=country.begin();it!=country.end();it++)//迭代器使用的方法，先记住！
+	{
+		cout << *it << ' ';
+	}
+	return 0;
+}
