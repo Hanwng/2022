@@ -1,0 +1,17 @@
+#include<string>
+#include<map>
+#include<utility>
+using namespace std;//一定不要忘
+int main()
+{
+	map<string, int> a;
+	a.insert(make_pair("Tom", 1));
+	a.insert(make_pair("Zone", 2));
+	a.insert(make_pair("Mary",1));
+	a["Tom"] = 4;//可以直接用数组下标的方式进行定义，更为方便
+	for (map<string,int>::iterator it=a.begin();it!=a.end();it++)
+	{
+		cout << it->first << "->" << it->second << endl;//按照first已经排好序了
+	}
+	return 0;
+}
